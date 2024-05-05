@@ -29,9 +29,10 @@ function handleKeyboardButtonPress(event) {
         const newLife = lifeRemain - 1;
 
         if (newLife === 0) {
-           hideScreen("final-score");
-           showScreen('keyboard');
-            disPlay('final-score',updateScore)
+        //    hideScreen("final-score");
+        //    showScreen('keyboard');
+           showHide("keyboard", "final-score");
+            disPlay('display-final-score',updateScore)
         } else {
             disPlay('current-life', newLife);
 
@@ -101,9 +102,11 @@ function showHide(event, event2) {
 
     const element = document.getElementById(event);
     element.classList.add("hidden");
+    element.classList.remove("flex");
 
     const element2 = document.getElementById(event2);
     element2.classList.remove("hidden");
+    element2.classList.add("flex");
 }
 // show screen 
 function showScreen(event){
